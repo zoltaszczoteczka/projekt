@@ -61,6 +61,22 @@ class ItemMapper
 //        }
 //    }
 
+
+    public function addItem(
+        string $name, int $price
+    ) {
+        try {
+            $stmt = $this->database->connect()->prepare('INSERT INTO items (name, price) VALUES (:name, :price);');
+            $stmt->bindParam(':name', $name, PDO::PARAM_STR);
+            $stmt->bindParam(':price', $price, PDO::PARAM_INT);
+            $stmt->execute();
+            $items = $stmt->fetch(PDO::FETCH_ASSOC);
+            return 'Item added';
+        }
+        catch(PDOException $e) {
+            return 'Error: ' . $e->getMessage();
+        }
+    }
     public function delete(int $id): void
     {
         try {
@@ -73,4 +89,6 @@ class ItemMapper
             die();
         }
     }
+
+
 }

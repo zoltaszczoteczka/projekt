@@ -64,4 +64,11 @@ class AdminController extends AppController
 
         http_response_code(200);
     }
+
+    public function itemAdd(): void
+    {
+        //JAKI HTTP RESPONSE CODE
+        $items = new ItemMapper();
+        $items->addItem((string)$_POST['name'],(int)$_POST('price'));
+    }
 }

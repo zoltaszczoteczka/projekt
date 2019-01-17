@@ -33,6 +33,7 @@
         </table>
 
         <button class="btn btn-dark btn-lg" type="button" onclick="getUsers()">Get all users</button>
+        <button class="btn btn-dark btn-lg" type="button" onclick="addItem()">Add Item</button> //ARGUMENTY!
 
     </div>
     <div class="row">
