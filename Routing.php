@@ -58,7 +58,7 @@ class Routing
                 'controller' => 'AdminController',
                 'action' => 'itemDelete'
             ],
-            'admin_add_item' => [
+            'adminAddItem' => [
                 'controller' => 'AdminController',
                 'action' => 'itemAdd'
             ]

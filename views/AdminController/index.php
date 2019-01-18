@@ -33,9 +33,22 @@
         </table>
 
         <button class="btn btn-dark btn-lg" type="button" onclick="getUsers()">Get all users</button>
-        <button class="btn btn-dark btn-lg" type="button" onclick="addItem()">Add Item</button> //ARGUMENTY!
-
     </div>
+
+    <?php if(isset($message)): ?>
+        <?php foreach($message as $item): ?>
+            <div><?= $item ?></div>
+        <?php endforeach; ?>
+    <?php endif; ?>
+
+
+        <form class="adminAddItem" action="?page=adminAddItem" method="POST">
+            <br><label for="name">Name: </label><input name="name" value="<?php if(isset($_POST['name']) && !preg_match('/[^A-Za-z]/', $_POST['name'])) echo $_POST['name'] ?>" required/>
+            <label for="price">Price: </label><input name="price" value="<?php if(isset($_POST['price']) && !preg_match('/[^1-9]/', $_POST['price'])) echo $_POST['price'] ?>" required/>
+            <input type="submit" value="Add Item"/>
+        </form>
+
+
     <div class="row">
             <h4 class="mt-4">Sprzet:</h4>
 

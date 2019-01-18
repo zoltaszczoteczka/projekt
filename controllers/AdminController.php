@@ -65,10 +65,30 @@ class AdminController extends AppController
         http_response_code(200);
     }
 
-    public function itemAdd(): void
+    public function itemAdd()
     {
+        $mapper = new ItemMapper();
+        $item = null;
+
+        if ($this->isPost()) {
+            //VALIDATE INPUTS
+            $validationFailed = false;
+            $messages[] = null;
+            if(preg_match('/[^A-Za-z]/', $_POST['name'])) {
+                $validationFailed = true;
+                array_push($messages, 'The name should only consist of letters ('.$_POST['name'].' is wrong!)');
+            }
+            if(preg_match('/[^0-9]/', $_POST['price'])) {
+                $validationFailed = true;
+                array_push($messages, 'The price should only consist of numbers ('.$_POST['price'].' is wrong!)');
         //JAKI HTTP RESPONSE CODE
-        $items = new ItemMapper();
-        $items->addItem((string)$_POST['name'],(int)$_POST('price'));
-    }
+
+                if($validationFailed) {
+                    return $this->render('index', ['message' => $messages]);
+                }
+                $tmp = $mapper->addItem($_POST['name'], $_POST['price']);
+                return $this->render('index', ['message' => ['Your item has been registered!']]);
+            }
+            $this->render('index');
+    }}
 }
