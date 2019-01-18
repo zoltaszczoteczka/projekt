@@ -61,7 +61,7 @@ $(document).ready(function () {
 })
 
 $(document).ready(function () {
-    console.log("test");
+    console.log("test2");
     const apiUrl = "http://localhost:80";
     const $list = $('.items-list');
     $.ajax({
@@ -80,7 +80,9 @@ $(document).ready(function () {
                     <td>${el.price}</td>
                     <td>
                    <a href="mailto:kontakt@telegaconsulting.pl">kontakt@telegaconsulting.pl</a>
+                   //DZIWKO DZIALAJ
                     </td>
+                    
                     </tr>`);
             })
         });
