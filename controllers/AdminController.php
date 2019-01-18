@@ -15,7 +15,7 @@ class AdminController extends AppController
     public function index(): void
     {
         $user = new UserMapper();
-        if(isset($_SESSION['id_user']) && isset($_SESSION['role']) && $_SESSION['role'] == 2) {
+        if(isset($_SESSION['id']) && isset($_SESSION['role']) && $_SESSION['role'] == '2') {
             $this->render('index', ['user' => $user->getUser($_SESSION['id'])]);
         } else {
             $url = "http://$_SERVER[HTTP_HOST]/";
@@ -98,6 +98,6 @@ class AdminController extends AppController
 
                 return $this->render('index', ['user'=> $user->getUser($_SESSION['id']),'message' => ['Your item has been registered!']]);
             }
-            $this->render('index', ['user'=> $user->getUser($_SESSION['id']),'message' => ['Your item has been registered!']]);
+            $this->render('index', ['user'=> $user->getUser($_SESSION['id']),'message' => ['Your item has not? been registered!']]);
     }
 }
