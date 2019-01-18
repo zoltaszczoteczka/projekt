@@ -68,6 +68,7 @@ class AdminController extends AppController
     public function itemAdd()
     {
         $mapper = new ItemMapper();
+        $user = new UserMapper();
         $item = null;
 
         if ($this->isPost()) {
@@ -87,7 +88,8 @@ class AdminController extends AppController
                     return $this->render('index', ['message' => $messages]);
                 }
                 $tmp = $mapper->addItem($_POST['name'], $_POST['price']);
-                return $this->render('index', ['message' => ['Your item has been registered!']]);
+
+                return $this->render('index', ['user'=> $user->getUser($_SESSION['id']),'message' => ['Your item has been registered!']]);
             }
             $this->render('index');
     }}

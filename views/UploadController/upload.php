@@ -1,3 +1,8 @@
+<!DOCTYPE html>
+<html>
+
+<?php include(dirname(__DIR__).'/head.html'); ?>
+
 <?php
 /**
  * Created by PhpStorm.
@@ -19,3 +24,27 @@ if(isset($message)): ?>
     <label for="password">Password: </label><input name="password" type="password" required/><br>
     <input type="submit" value="Register"/>
 </form>
+
+<body>
+<div class="container">
+
+<div class="row">
+    <h4 class="mt-4">Sprzet:</h4>
+
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Rent</th>
+        </tr>
+        </thead>
+
+        <tbody class="items-list">
+        </tbody>
+    </table>
+</div>
+</div>
+
+</body>
+</html>
