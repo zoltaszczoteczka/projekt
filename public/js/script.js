@@ -63,14 +63,14 @@ $(document).ready(function () {
 $(document).ready(function () {
     console.log("test2");
     const apiUrl = "http://localhost:80";
-    const $list = $('.items-list');
+    const $list2 = $('.itemstorent-list');
     $.ajax({
         url : apiUrl + '/?page=upload',
         dataType : 'json'
     })
         .done((res) => {
 
-            $list.empty();
+            $list2.empty();
             console.log(res);
             //robimy pętlę po zwróconej kolekcji
             //dołączając do tabeli kolejne wiersze
@@ -79,8 +79,7 @@ $(document).ready(function () {
                     <td>${el.name}</td>
                     <td>${el.price}</td>
                     <td>
-                   <a href="mailto:kontakt@telegaconsulting.pl">kontakt@telegaconsulting.pl</a>
-                   //DZIWKO DZIALAJ
+                    <a href="mailto:rentgreat@equipment.pl">send a request</a>
                     </td>
                     
                     </tr>`);

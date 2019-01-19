@@ -34,9 +34,10 @@ if(isset($message)): ?>
         </tr>
         </thead>
 
-        <tbody class="items-list">
+        <tbody class="itemstorent-list">
         </tbody>
     </table>
+
 </div>
 </div>
 

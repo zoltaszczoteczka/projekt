@@ -99,5 +99,8 @@ class AdminController extends AppController
                 return $this->render('index', ['user'=> $user->getUser($_SESSION['id']),'message' => ['Your item has been registered!']]);
             }
             $this->render('index', ['user'=> $user->getUser($_SESSION['id']),'message' => ['Your item has not? been registered!']]);
+        $url = "http://$_SERVER[HTTP_HOST]/";
+        header("Location: {$url}?page=index");
+        exit();
     }
 }
