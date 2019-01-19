@@ -1,4 +1,6 @@
 <?php
+require_once 'AppController.php';
+require_once __DIR__.'/../model/ItemMapper.php';
 
 class UploadController extends AppController
 {
@@ -10,6 +12,16 @@ class UploadController extends AppController
     public function __construct()
     {
         parent::__construct();
+    }
+
+    public function items(): void
+    {
+        $items = new ItemMapper();
+
+        header('Content-type: application/json');
+        http_response_code(200);
+
+        echo $items->getItems() ? json_encode($items->getItems()) : '';
     }
 
     public function upload()

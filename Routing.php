@@ -30,6 +30,10 @@ class Routing
                 'controller' => 'UploadController',
                 'action' => 'upload'
             ],
+            'upload_items' => [
+              'controller' => 'UploadController',
+              'action' => 'items'
+            ],
             'player' => [
                 'controller' => 'PlayerController',
                 'action' => 'player'

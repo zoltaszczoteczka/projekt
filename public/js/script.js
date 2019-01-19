@@ -63,14 +63,14 @@ $(document).ready(function () {
 $(document).ready(function () {
     console.log("test2");
     const apiUrl = "http://localhost:80";
-    const $list2 = $('.itemstorent-list');
+    const $list = $('.itemstorent-list');
     $.ajax({
-        url : apiUrl + '/?page=upload',
+        url : apiUrl + '/?page=upload_items',
         dataType : 'json'
     })
         .done((res) => {
 
-            $list2.empty();
+            $list.empty();
             console.log(res);
             //robimy pętlę po zwróconej kolekcji
             //dołączając do tabeli kolejne wiersze

@@ -1,3 +1,6 @@
+<?php include(dirname(__DIR__).'/head.html'); ?>
+<?php include(dirname(__DIR__).'/navbar.html'); ?>
+
 <?php
 /**
  * Created by PhpStorm.

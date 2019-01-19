@@ -27,7 +27,6 @@ if(isset($message)): ?>
     <table class="table table-hover">
         <thead>
         <tr>
-            <a href="mailto:kontakt@telegaconsulting.pl">kontakt@telegaconsulting.pl</a>
             <th>Name</th>
             <th>Price</th>
             <th>Rent</th>

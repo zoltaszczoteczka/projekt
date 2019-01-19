@@ -18,7 +18,6 @@ class DefaultController extends AppController
     {
         $text = 'Hello there 👋';
 
-        echo $_SESSION['role'];
         $this->render('index', ['text' => $text]);
     }
 
@@ -64,7 +63,7 @@ class DefaultController extends AppController
         $mapper = new UserMapper();
         $user = null;
         if ($this->isPost()) {
-            //VALIDATE INPUTS
+
             $validationFailed = false;
             $messages[] = null;
             if(preg_match('/[^A-Za-z]/', $_POST['name'])) {
