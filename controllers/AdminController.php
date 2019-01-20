@@ -79,7 +79,7 @@ class AdminController extends AppController
         $item = null;
 
         if ($this->isPost()) {
-            //VALIDATE INPUTS
+
             $validationFailed = false;
             $messages[] = null;
             if(preg_match('/[^A-Za-z]/', $_POST['name'])) {
@@ -96,6 +96,8 @@ class AdminController extends AppController
                 }
                 $tmp = $mapper->addItem($_POST['name'], (int)$_POST['price']);
 
+            $url = "http://$_SERVER[HTTP_HOST]/";
+            header("Location: {$url}?page=admin");
                 return $this->render('index', ['user'=> $user->getUser($_SESSION['id']),'message' => ['Your item has been registered!']]);
             }
             $this->render('index', ['user'=> $user->getUser($_SESSION['id']),'message' => ['Your item has not? been registered!']]);
