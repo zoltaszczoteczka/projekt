@@ -74,7 +74,7 @@ class DefaultController extends AppController
                 $validationFailed = true;
                 array_push($messages, 'The surname should only consist of letters ('.$_POST['surname'].' is wrong!)');
             }
-            if(!preg_match('/[^@]+@[^\.]+[^A-Za-z]+[^\.]+\..+/', $_POST['email'])) {
+            if(!preg_match('/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,10})$/', $_POST['email'])) {
                 $validationFailed = true;
                 array_push($messages, 'The email provided is valid ('.$_POST['email'].' is wrong!)');
             }
