@@ -81,12 +81,12 @@ class DefaultController extends AppController
             if($validationFailed) {
                 return $this->render('register', ['message' => $messages]);
             }
-            //VALIDATE IF EMAIL IS UNIQUE
+
             $user = $mapper->getUser($_POST['email']);
             if(!($user->getEmail() == null) && !($user->getEmail() == '')) {
                 return $this->render('register', ['message' => ['This email has already been used!']]);
             }
-            //ADD USER TO DATABASE
+
             $tmp = $mapper->addUser($_POST['name'], $_POST['surname'], $_POST['email'], md5($_POST['password']));
             return $this->render('register', ['message' => ['Your account has been registered!']]);
         }

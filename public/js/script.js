@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    $('.panel-header').html('SIGN IN');
+    //$('.panel-header').html('SIGN IN');
 });
 
 

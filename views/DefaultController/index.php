@@ -8,7 +8,7 @@
 
 <div class="container">
     <div class="row">
-        <h1 class="col-12">WELCOME TO MULTIMEDIA EQUIPMENT RENTAL</h1>
+        <h1 class="col-14">WELCOME TO MULTIMEDIA EQUIPMENT RENTAL</h1>
         <p>
 
         </p>
@@ -20,8 +20,8 @@
         }
         ?>
 
-        <div class="position">
-            <img src="https://i.ytimg.com/vi/jRS9fVh7MUw/maxresdefault.jpg" width="460" height="345">
+        <div class="relative">
+            <img id="camera" src="https://images.emojiterra.com/twitter/512px/1f3a5.png" width="400" height="400" >
         </div>
     </div>
 </div>

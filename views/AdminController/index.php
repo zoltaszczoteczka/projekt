@@ -9,7 +9,7 @@
     <div class="row">
         <h1 class="col-12 pl-0">ADMIN PANEL</h1>
 
-        <h4 class="mt-4">Your data:</h4>
+        <h4 class="mt-4">Users:</h4>
         <table class="table table-hover">
             <thead>
             <tr>
@@ -33,7 +33,7 @@
             </tbody>
         </table>
 
-        <button class="btn btn-dark btn-lg" type="button" onclick="getUsers()">Get all users</button>
+            <button class="btn btn-dark btn-lg" type="button" onclick="getUsers()">Get all users</button>
     </div>
 
     <?php if(isset($message)): ?>
@@ -43,15 +43,14 @@
     <?php endif; ?>
 
 
-        <form class="adminAddItem" action="?page=adminAddItem" method="POST">
-            <br><label for="name">Name: </label><input name="name" value="<?php if(isset($_POST['name']) && !preg_match('/[^A-Za-z]/', $_POST['name'])) echo $_POST['name'] ?>" required/>
-            <label for="price">Price: </label><input name="price" value="<?php if(isset($_POST['price']) && !preg_match('/[^1-9]/', (int)$_POST['price'])) echo (int)$_POST['price'] ?>" required/>
-            <input type="submit" value="Add Item"/>
+    <div class="adminAddItem" action="?page=adminAddItem" method="POST">
+        <br><label for="name"></label><input name="name" value="<?php if(isset($_POST['name']) && !preg_match('/[^A-Za-z]/', $_POST['name'])) echo $_POST['name'] ?>" placeholder="name" required/><label for="price"></label><input name="price" value="<?php if(isset($_POST['price']) && !preg_match('/[^1-9]/', (int)$_POST['price'])) echo (int)$_POST['price'] ?>" placeholder="price" required/>
+        <input type="submit" value="Add Item" class="btn btn-warning btn-sm"/>
         </form>
 
 
     <div class="row">
-            <h4 class="mt-4">Sprzet:</h4>
+            <h4 class="mt-4">Equipment:</h4>
 
         <table class="table table-hover">
             <thead>
