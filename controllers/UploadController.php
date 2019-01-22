@@ -26,6 +26,7 @@ class UploadController extends AppController
 
     public function upload()
     {
+
         if ($this->isPost() && is_uploaded_file($_FILES['file']['tmp_name']) && $this->validate($_FILES['file'])) {
 
             move_uploaded_file(
@@ -36,7 +37,15 @@ class UploadController extends AppController
             $this->message[] = 'File uploaded.';
         }
 
-        $this->render('upload', [ 'message' => $this->message]);
+        //$this->render('upload', [ 'message' => $this->message]);
+
+        if(isset($_SESSION['id']))
+            return $this->render('upload', [ 'message' => $this->message]);
+        else {
+            $url = "http://$_SERVER[HTTP_HOST]/";
+            header("Location: {$url}?page=index");
+            exit();
+        }
     }
 
     private function validate(array $file): bool
